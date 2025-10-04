@@ -26,7 +26,6 @@ export function buildDatoCmaClient(options?: BuildDatoCmaClientOptions) {
 
 export async function getCmaSiteName(): Promise<string | null> {
   const client = buildDatoCmaClient()
-  // Using CMA "Site" resource per docs; simplified endpoint
   const site = await client.site.find()
   const name = (site as { name?: string | null }).name ?? null
   return name
