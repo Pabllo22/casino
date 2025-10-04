@@ -42,6 +42,33 @@ export default defineConfig([
   },
 ])
 ```
+## Подключение к DatoCMS
+
+1. Установите официальный клиент CMA (браузер):
+
+   ```bash
+   npm i @datocms/cma-client-browser
+   ```
+
+2. Создайте `.env.local` в корне проекта (на основе `env.example`) и добавьте токены:
+
+   ```bash
+   VITE_DATOCMS_API_TOKEN=<Read-Only GraphQL API Token>
+   VITE_DATOCMS_CMA_TOKEN=<Content Management API Token>
+   ```
+
+3. Примеры в коде:
+
+   - GraphQL CDN: `src/lib/datocms.ts` + `src/components/DatoPing.tsx`
+   - CMA (JS клиент, браузер): `src/lib/datocmsCma.ts` + `src/components/DatoCmaPing.tsx`
+
+4. Запуск:
+
+   ```bash
+   npm run dev
+   ```
+
+Документация: [Using the JavaScript client](https://www.datocms.com/docs/content-management-api/using-the-nodejs-clients)
 
 You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
