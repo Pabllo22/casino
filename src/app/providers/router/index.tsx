@@ -1,8 +1,9 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import AppLayout from '../../layouts/AppLayout'
-import HomePage from '../../../pages/home'
-import OffersPage from '../../../pages/offers'
-import NotFoundPage from '../../../pages/not-found'
+import HomePage from '@/pages/home'
+import SportPage from '@/pages/sport'
+import NotFoundPage from '@/pages/not-found'
+import CasinoPage from '@/pages/casino'
 
 const router = createBrowserRouter([
   {
@@ -11,7 +12,8 @@ const router = createBrowserRouter([
     errorElement: <NotFoundPage />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: 'offers', element: <OffersPage /> },
+      { path: 'sport', element: <SportPage /> },
+      { path: 'casino', element: <CasinoPage /> },
       { path: '*', element: <NotFoundPage /> },
     ],
   },
