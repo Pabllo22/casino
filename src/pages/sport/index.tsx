@@ -1,5 +1,4 @@
 import { Button, Container, Title } from '@/shared/ui'
-import CasinoList from '@/widgets/casino/CasinoList'
 import { CardInfo } from './ui/CardInfo'
 import IconArrow from "@/shared/assets/icons/arrow-right.svg?react";
 import { Result } from '@/entities/result/ui/Result';
