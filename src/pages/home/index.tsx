@@ -1,7 +1,7 @@
 import { CardMenu } from "@/shared/ui/card-menu/CardMenu";
 import { Title } from "@/shared/ui";
-import casinoUrl from '@/shared/assets/casino.png?url'
-import sportUrl from '@/shared/assets/sport.png?url';
+import casinoUrl from '@/shared/assets/Casino.png?url'
+import sportUrl from '@/shared/assets/Sport.png?url';
 
 export default function HomePage() {
   return (
@@ -14,5 +14,4 @@ export default function HomePage() {
     </section>
   )
 }
-
 
