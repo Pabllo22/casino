@@ -14,7 +14,7 @@ export const Input = ({
       <div className="inline-flex w-full items-center rounded-full border-2 border-green-100 bg-black-100 md:px-8 md:py-4 py-3 px-6 ">
         <input
           {...props}
-          className={`w-full bg-transparent text-white font-medium placeholder-white md:text-[32px] text-xl leading-none outline-none ${className}`}
+          className={`w-full bg-transparent text-white font-medium placeholder-white md:text-xl text-lg leading-none outline-none ${className}`}
         />
       </div>
     </div>

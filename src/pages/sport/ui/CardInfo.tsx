@@ -2,58 +2,61 @@ import { ChipsGroup, CustomSelect } from '@/shared/ui';
 import { Input } from '@/shared/ui/input/Input';
 import { useState } from 'react';
 import imageUrl from "@/shared/assets/ball.png";
+import { useFilters } from '@/shared/hooks';
 
-export const CardInfo = () => {
-  const [val, setVal] = useState<string | number | null>(null);
+export const CardInfo = ({ onPromocodeChange }: { onPromocodeChange: (promocode: string) => void }) => {
+  const [promocode, setPromocode] = useState<string>('');
+  const {
+    sportTypes,
+    categories,
+    locations,
+    selectedLocation,
+    setSelectedSportType,
+    setSelectedCategory,
+    setSelectedLocation
+  } = useFilters();
+
+  const handlePromocodeChange = (value: string) => {
+    setPromocode(value);
+    onPromocodeChange(value);
+  };
   return (
     <div className='mt-8 relative overflow-hidden bg-[linear-gradient(90deg,#232121_0%,#000_100%)] shadow-[0_0_21px_0_rgba(149,220,0,0.26)] rounded-[40px] flex lg:flex-row flex-col'>
       <div className="lg:w-1/2 relative shrink-0">
-        <img src={imageUrl} className='absolute bottom-0 left-0 w-full lg:block hidden'/>
-        <div className="uppercase md:text-[139px] text-[109px] text-white font-black text-center lg:mt-[96px] mt-8">Sport</div>
+        <img src={imageUrl} className='absolute -bottom-14 left-0 right-0 mx-auto w-full lg:block hidden max-w-[627px]'/>
+        <div className="uppercase md:text-[100px] text-[80px] text-white font-black text-center lg:mt-4 mt-2">Sport</div>
       </div>
-      <div className="flex flex-col md:gap-12 gap-8 flex-1 lg:w-1/2 lg:py-16 lg:pr-16 p-6">
+      <div className="flex flex-col md:gap-12 gap-8 flex-1 lg:w-1/2 lg:py-12 lg:pr-16 p-6">
         <ChipsGroup
           label='Choose sport type'
           options={[
-            { label: 'Cricket', value: 's' },
-            { label: 'Football', value: 'm' },
-            { label: 'Hockey', value: 'l' },
-            { label: 'UFC', value: 'ls' },
+            ...sportTypes.map(sport => ({ label: sport.title, value: sport.id }))
           ]}
-          onChange={(v) => console.log('single ->', v)}
+          onChange={(v) => setSelectedSportType(Array.isArray(v) ? String(v[0] || '') || null : String(v || '') || null)}
         />
         <ChipsGroup
           label='Choose banner category'
           options={[
-            { label: 'General', value: 'sx' },
-            { label: 'Events', value: 'mx' },
+            ...categories.map(category => ({ label: category.title, value: category.id }))
           ]}
-          onChange={(v) => console.log('single ->', v)}
+          onChange={(v) => setSelectedCategory(Array.isArray(v) ? String(v[0] || '') || null : String(v || '') || null)}
         />
         <div className="flex flex-col md:gap-6 gap-4">
-          <div className="md:text-[32px] text-xl text-white font-medium">Choose the GEO</div>
+          <div className="md:text-[32px] text-xl text-white font-medium leading-[100%]">Choose the GEO</div>
           <CustomSelect
-            options={[
-              { label: 'UZS', value: 'UZS' },
-              { label: 'BDT', value: 'BDT' },
-              { label: 'INR', value: 'INR' },
-              { label: 'RUB', value: 'RUB' },
-              { label: 'AZN', value: 'AZN' },
-              { label: 'PKR', value: 'PKR' },
-              { label: 'ENG', value: 'ENG' },
-              { label: 'RUB', value: 'RUB' },
-              { label: 'AZN', value: 'AZN' },
-              { label: 'PKR', value: 'PKR' },
-              { label: 'ENG', value: 'ENG' },
-            ]}
+            options={locations.map(location => ({ label: location.title, value: location.id }))}
             placeholder="Select"
-            value={val}
-            onChange={setVal}
+            value={selectedLocation}
+            onChange={(v) => setSelectedLocation(Array.isArray(v) ? String(v[0] || '') || null : String(v || '') || null)}
           />
         </div>
         <div className="flex flex-col md:gap-6 gap-4">
-          <div className="md:text-[32px] text-xl text-white font-medium">Enter the promocode</div>
-          <Input placeholder='Type here'/>
+          <div className="md:text-[32px] text-xl text-white font-medium leading-[100%]">Enter the promocode</div>
+          <Input 
+            placeholder='Type here'
+            value={promocode}
+            onChange={(e) => handlePromocodeChange(e.target.value)}
+          />
         </div>  
       </div>
     </div>

@@ -57,7 +57,7 @@ export const CustomSelect = ({
     variant === 'auto' ? (selected ? 'filled' : 'outline') : variant;
 
   const base =
-    'relative z-50 md:p-4 p-3 border rounded-[30px] md:text-[32px] text-xl font-medium leading-none transition-colors duration-200 m-0 flex items-center justify-between';
+    'relative z-50 md:px-4 md:py-3 p-3 border rounded-[30px] md:text-xl text-lg font-medium leading-none transition-colors duration-200 m-0 flex items-center justify-between';
   const outline = 'bg-black-100 border-gray-100 text-white';
   const filled  = 'bg-green-100 border-green-100 text-black';
   const ctrlClasses =

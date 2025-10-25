@@ -5,7 +5,7 @@ import { Button } from '@/shared/ui'
 
 export function Header() {
   return (
-    <header className="flex items-center md:justify-between justify-center md:px-7 px-4 md:py-6 py-3 flex-wrap gap-5">
+    <header className="flex items-center md:justify-between justify-center md:px-7 px-4 md:py-6 py-3 flex-wrap gap-5 absolute top-0 left-0 w-full z-10">
        <NavLink
           to="/"
           aria-label="Casino Banner home"

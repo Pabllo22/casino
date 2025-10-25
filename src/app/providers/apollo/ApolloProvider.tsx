@@ -1,0 +1,14 @@
+import { ApolloProvider as ApolloClientProvider } from '@apollo/client/react'
+import { apolloClient } from '@/shared/lib/apollo-client'
+
+interface ApolloProviderProps {
+  children: React.ReactNode
+}
+
+export function ApolloProvider({ children }: ApolloProviderProps) {
+  return (
+    <ApolloClientProvider client={apolloClient}>
+      {children}
+    </ApolloClientProvider>
+  )
+}
