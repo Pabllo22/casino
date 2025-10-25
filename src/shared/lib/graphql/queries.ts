@@ -92,3 +92,11 @@ export const GET_FILTERS = gql`
     }
   }
 `
+
+export const GET_GLOBAL_SETTINGS = gql`
+  query GetGlobalSettings {
+    globalSetting {
+      starterPack
+    }
+  }
+`
