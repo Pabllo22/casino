@@ -28,7 +28,7 @@ export const CardInfo = ({ onPromocodeChange }: { onPromocodeChange: (promocode:
         <ChipsGroup
           label='Choose banner category'
           options={[
-            ...categories.map(cat => ({ label: cat.title, value: cat.id }))
+            ...categories.map((cat: { id: string; title: string }) => ({ label: cat.title, value: cat.id }))
           ]}
           onChange={(v) => setSelectedCategory(Array.isArray(v) ? String(v[0] || '') || null : String(v || '') || null)}
         />
@@ -36,7 +36,7 @@ export const CardInfo = ({ onPromocodeChange }: { onPromocodeChange: (promocode:
           <div className="md:text-[32px] text-xl text-white font-medium leading-[100%]">Choose the GEO</div>
           <CustomSelect
             options={[
-              ...locations.map(loc => ({ label: loc.title, value: loc.id }))
+              ...locations.map((loc: { id: string; title: string }) => ({ label: loc.title, value: loc.id }))
             ]}
             placeholder="Select"
             value={selectedLocation || ''}

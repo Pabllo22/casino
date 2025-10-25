@@ -30,21 +30,21 @@ export const CardInfo = ({ onPromocodeChange }: { onPromocodeChange: (promocode:
         <ChipsGroup
           label='Choose sport type'
           options={[
-            ...sportTypes.map(sport => ({ label: sport.title, value: sport.id }))
+            ...sportTypes.map((sport: { id: string; title: string }) => ({ label: sport.title, value: sport.id }))
           ]}
           onChange={(v) => setSelectedSportType(Array.isArray(v) ? String(v[0] || '') || null : String(v || '') || null)}
         />
         <ChipsGroup
           label='Choose banner category'
           options={[
-            ...categories.map(category => ({ label: category.title, value: category.id }))
+            ...categories.map((category: { id: string; title: string }) => ({ label: category.title, value: category.id }))
           ]}
           onChange={(v) => setSelectedCategory(Array.isArray(v) ? String(v[0] || '') || null : String(v || '') || null)}
         />
         <div className="flex flex-col md:gap-6 gap-4">
           <div className="md:text-[32px] text-xl text-white font-medium leading-[100%]">Choose the GEO</div>
           <CustomSelect
-            options={locations.map(location => ({ label: location.title, value: location.id }))}
+            options={locations.map((location: { id: string; title: string }) => ({ label: location.title, value: location.id }))}
             placeholder="Select"
             value={selectedLocation}
             onChange={(v) => setSelectedLocation(Array.isArray(v) ? String(v[0] || '') || null : String(v || '') || null)}

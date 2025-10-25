@@ -1,8 +1,8 @@
 import React from 'react'
 import { useQuery } from '@apollo/client/react'
 import { GET_FILTERS } from '@/shared/lib/graphql/queries'
-import { useAppStore } from '@/shared/store'
 import { handleGraphQLError } from '@/shared/lib/toast'
+import { useAppStore } from '../store';
 
 interface FilterItem {
   id: string;
