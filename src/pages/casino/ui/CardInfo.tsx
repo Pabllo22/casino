@@ -1,7 +1,7 @@
 import { ChipsGroup, CustomSelect } from '@/shared/ui';
 import { Input } from '@/shared/ui/input/Input';
 import { useState } from 'react';
-import imageUrl from "@/shared/assets/wheel.png?url";
+import imageUrl from "@/shared/assets/Wheel.png";
 import { useFilters } from '@/shared/hooks';
 
 export const CardInfo = ({ onPromocodeChange }: { onPromocodeChange: (promocode: string) => void }) => {
