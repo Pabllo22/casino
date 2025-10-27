@@ -193,10 +193,10 @@ export const CustomSelect = ({
           id="custom-select-listbox"
           role="listbox"
           ref={listRef}
-          className={`absolute -mt-6 pt-8 z-10 text-center w-full bg-black-100 shadow-xl md:max-h-[250px] max-h-[200px] overflow-y-auto ${menuClassName}`}
+          className={`absolute -mt-6 pt-8 z-10 text-left w-full bg-black-100 shadow-xl md:max-h-[250px] max-h-[200px] overflow-y-auto ${menuClassName}`}
         >
           {filtered.length === 0 && (
-            <div className="px-6 py-4 text-[28px] leading-none text-white/70">
+            <div className="px-6 py-4 text-xl leading-none text-white/70">
               Not found
             </div>
           )}
@@ -204,7 +204,7 @@ export const CustomSelect = ({
           {filtered.map((opt, i) => {
             const isSel = selected != null && opt.value === selected;
             const baseItem =
-              'px-4 py-2 md:text-[32px] text-xl leading-none cursor-pointer select-none hover:bg-[#686868]';
+              'px-4 py-2 md:text-xl text-lg leading-none cursor-pointer select-none hover:bg-[#686868]';
             const state =
               (isSel ? 'bg-[#686868]' : '')
             return (
