@@ -146,7 +146,7 @@ export const CustomSelect = ({
     : (selectedLabel ?? (selected !== null ? String(selected) : ''));
 
   return (
-    <div ref={rootRef} className="relative inline-block w-[195px]" onKeyDown={onKeyDown}>
+    <div ref={rootRef} className="relative inline-block w-[150px]" onKeyDown={onKeyDown}>
       <div
         role="combobox"
         aria-expanded={open}
@@ -165,7 +165,7 @@ export const CustomSelect = ({
       >
         <input
           ref={inputRef}
-          className={`bg-transparent outline-none border-0 p-0 m-0 w-full ${inputTextCls} placeholder:truncate text-center`}
+          className={`bg-transparent outline-none border-0 p-0 m-0 w-full ${inputTextCls} placeholder:truncate text-left`}
           placeholder={placeholder}
           value={display}
           onChange={(e) => {

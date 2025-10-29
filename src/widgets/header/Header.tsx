@@ -13,7 +13,7 @@ export function Header() {
           to="/"
           aria-label="Casino Banner home"
         >
-          <LogoIcon className="h-8 w-auto" aria-hidden />
+          <LogoIcon className="h-4 w-auto" aria-hidden />
       </NavLink>
       <div className="flex items-center gap-4 text-xs">
         <Button
